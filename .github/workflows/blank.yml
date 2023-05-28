@@ -4,12 +4,6 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,6 +27,7 @@ jobs:
           wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.0-x86_64.tar.gz
           tar -xzvf *tar.gz
           rm *gz
+          sudo -i
           mount --rbind /sys $PWD/sys
           mount --rbind /proc $PWD/proc
           mount --rbind /dev $PWD/dev
