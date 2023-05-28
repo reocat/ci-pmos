@@ -31,7 +31,7 @@ jobs:
           sudo -i mount --rbind /sys $PWD/sys
           sudo -i mount --rbind /proc $PWD/proc
           sudo -i mount --rbind /dev $PWD/dev
-          chroot $PWD
+          sudo -i chroot $PWD
           export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
           apk add neofetch
           neofetch
