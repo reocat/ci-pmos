@@ -27,10 +27,10 @@ jobs:
           wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.0-x86_64.tar.gz
           tar -xzvf *tar.gz
           rm *gz
-          sudo -i
-          mount --rbind /sys $PWD/sys
-          mount --rbind /proc $PWD/proc
-          mount --rbind /dev $PWD/dev
+          sudo -i 
+          sudo -i mount --rbind /sys $PWD/sys
+          sudo -i mount --rbind /proc $PWD/proc
+          sudo -i mount --rbind /dev $PWD/dev
           chroot $PWD
           export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
           apk add neofetch
